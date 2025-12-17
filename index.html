@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<html lang="he" dir="rtl">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>החתיכים - מי אתה?</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Heebo:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <div class="background-pattern"></div>
+    
+    <main class="container">
+        <header class="header">
+            <div class="group-badge">👥 החתיכים</div>
+            <h1 class="title">מי אתה?</h1>
+            <p class="subtitle">הכנס את שמך וגלה את הפרופיל שלך בקבוצה</p>
+        </header>
+
+        <form id="searchForm" class="search-form">
+            <div class="input-wrapper">
+                <input 
+                    type="text" 
+                    id="nameInput" 
+                    class="name-input" 
+                    placeholder="שם או מספר טלפון..."
+                    autocomplete="off"
+                    required
+                >
+                <button type="submit" class="submit-btn">
+                    <span class="btn-text">גלה</span>
+                    <span class="btn-icon">✨</span>
+                </button>
+            </div>
+        </form>
+
+        <!-- Quick Access -->
+        <section class="quick-access">
+            <p class="quick-label">או בחר ישירות:</p>
+            <div class="quick-buttons" id="quickButtons"></div>
+        </section>
+
+        <section id="resultsSection" class="results-section hidden">
+            <!-- Profile Card -->
+            <div id="profileCard" class="profile-card hidden">
+                <div class="profile-header">
+                    <div class="profile-avatar" id="profileAvatar">👤</div>
+                    <h2 id="profileName" class="profile-name"></h2>
+                    <span id="profileNickname" class="profile-nickname"></span>
+                </div>
+                
+                <div class="profile-stats">
+                    <div class="stat-item">
+                        <span class="stat-value" id="messageCount">0</span>
+                        <span class="stat-label">הודעות</span>
+                    </div>
+                    <div class="stat-item">
+                        <span class="stat-value" id="mediaCount">0</span>
+                        <span class="stat-label">מדיה</span>
+                    </div>
+                    <div class="stat-item">
+                        <span class="stat-value" id="linkCount">0</span>
+                        <span class="stat-label">קישורים</span>
+                    </div>
+                </div>
+                
+                <div class="profile-body">
+                    <div id="profileRole" class="profile-role"></div>
+                    
+                    <div class="profile-traits">
+                        <h3 class="traits-title">🎯 מאפיינים בולטים:</h3>
+                        <ul id="profileTraits" class="traits-list"></ul>
+                    </div>
+                    
+                    <div class="quote-section">
+                        <h3 class="quote-title">💬 ציטוט מייצג:</h3>
+                        <blockquote id="profileQuote" class="profile-quote"></blockquote>
+                    </div>
+                    
+                    <div class="topics-section">
+                        <h3 class="topics-title">📌 נושאים מרכזיים:</h3>
+                        <div id="profileTopics" class="topics-list"></div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Suggestions -->
+            <div id="suggestionsCard" class="suggestions-card hidden">
+                <h3 class="suggestions-title">לא מצאנו התאמה מדויקת 🤔</h3>
+                <p class="suggestions-subtitle">אולי התכוונת לאחד מאלה?</p>
+                <div id="suggestionsList" class="suggestions-list"></div>
+            </div>
+        </section>
+        
+        <!-- All Profiles Gallery -->
+        <section class="all-profiles" id="allProfiles">
+            <h2 class="section-title">👥 כל החתיכים</h2>
+            <div class="profiles-grid" id="profilesGrid"></div>
+        </section>
+    </main>
+
+    <script src="app.js"></script>
+</body>
+</html>
